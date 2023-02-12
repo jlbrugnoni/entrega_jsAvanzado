@@ -14,13 +14,16 @@ var timezone = ...
 var WEATHER_API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=${timezone}&daily=weathercode,temperature_2m_max,temperature_2m_min,rain_sum,windspeed_10m_max`;
 */
 
-
-
+// Función para solicitar la información de la ciudad
 function infoCiudad() {
     console.log("--- obteniendo informacion de la ciudad");
-    console.log(document.getElementById("inputCiudad").value );
+    console.log("el nomnbre es:" + document.getElementById("inputCiudad").value );
 
-    var city = '';
+    if(document.getElementById("inputCiudad").value==''){
+        alert("Introducir nombre de ciudad");
+        document.getElementById("inputCiudad").value = '';
+    }else{
+        var city = '';
     city = document.getElementById("inputCiudad").value;
     var CITY_API_URL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}`;
 
@@ -38,9 +41,13 @@ function infoCiudad() {
         });
 
     document.getElementById("inputCiudad").value = null
+    }
+
+    
 
 }
 
+/* Función para solicitar la información del tiempo de la ciudad con los datos obtenidos de la funcion infoCiudad() */
 function imprimirCiudad(ciudad){
 
     var ciudadNombre = ciudad.results[0].name;
@@ -78,6 +85,7 @@ function imprimirCiudad(ciudad){
 
 }
 
+/* Función para imprimir las tarjetas del tiempo de cada uno de los dias para la ciudad solicitada*/
 function mostrarTiempo(tiempo){
     console.log(tiempo.daily.time[0])
 
@@ -149,6 +157,8 @@ function mostrarTiempo(tiempo){
 
     var HTML = ''
 }
+
+/* Función que nos muestra el mensaje de error en caso de que la ciudad no exista o no haya ningun parametro en el input de entrada*/
 
 function mostrarError(){
 
