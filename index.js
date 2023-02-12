@@ -18,6 +18,7 @@ var WEATHER_API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&lo
 
 function infoCiudad() {
     console.log("--- obteniendo informacion de la ciudad");
+    console.log(document.getElementById("inputCiudad").value );
 
     var city = '';
     city = document.getElementById("inputCiudad").value;
@@ -104,17 +105,17 @@ function mostrarTiempo(tiempo){
         lluvia = tiempo.daily.rain_sum[index];
         viento = tiempo.daily.windspeed_10m_max[index];
 
-        if (codigoClima > 90){
+        if (codigoClima >= 90){
             iconoUsar = iconoTormenta;
-        } else if (codigoClima > 80){
+        } else if (codigoClima >= 80){
             iconoUsar = iconoLluvia;
-        } else if (codigoClima > 70){
+        } else if (codigoClima >= 70){
             iconoUsar = iconoNieve;
-        }else if (codigoClima > 60){
+        }else if (codigoClima >= 60){
             iconoUsar = iconoLluvia;
-        }else if (codigoClima > 50){
+        }else if (codigoClima >= 50){
             iconoUsar = iconoLluvia;
-        }else if (codigoClima > 1){
+        }else if (codigoClima >= 1){
             iconoUsar = iconoNubes;
         }else if (codigoClima = 0){
             iconoUsar = iconoSol;
@@ -134,12 +135,12 @@ function mostrarTiempo(tiempo){
                 <div class="fecha">${dia}</div>
                 <div class="icono">${iconoUsar}</div>
                 <div class="temperatura">
-                    <div class="temperaturaMin">${tempMin}</div>
+                    <div class="temperaturaMin">${tempMin}°C</div>
                     <span>/</span>
-                    <div class="temperaturaMax">${tempMax}</div>
+                    <div class="temperaturaMax">${tempMax}°C</div>
                 </div>
-                <div class="lluvia">Lluvia: ${lluvia}mm</div>
-                <div class="viento">Viento: ${viento}km/h</div>
+                <div class="lluvia">Lluvia: ${lluvia} mm</div>
+                <div class="viento">Viento: ${viento} km/h</div>
             </div>
         `
     }

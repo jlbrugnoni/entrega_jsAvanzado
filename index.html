@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>UEMWeather</title>
+    <title>WeatherCast</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="/images/sun.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css" />
     <script src="./index.js"></script>
+   
 </head>
 
 <body>
     <header>
-        <div>UEMWeather</div>
+        <div>WeatherCast</div>
         <nav>
             <a href="#">Help</a>
             <a href="#">About</a>
@@ -19,7 +21,7 @@
     <main>
         <div id="barraEntradaCiudad">
             <div>Ciudad:</div>
-            <input id="inputCiudad"></input>
+            <input id="inputCiudad" type="text"></input>
             <button id="botonBuscar" onclick="infoCiudad()">Buscar</button>
         </div>
         <div id="mensajeError">
@@ -43,4 +45,5 @@
         <a href="#">Legal</a>
     </footer>
 </body>
+
 </html>
