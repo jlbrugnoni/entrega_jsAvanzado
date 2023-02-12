@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UEMWeather</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <header>
+        <div>UEMWeather</div>
+        <nav>
+            <a href="#">Help</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+    <main>
+        <div id="barraEntradaCiudad">
+            <div>Ciudad:</div>
+            <input id="inputCiudad"></input>
+            <button id="botonBuscar" onclick="infoCiudad()">Buscar</button>
+        </div>
+        <div id="mensajeError">
+            <b>Error: </b>No se ha podido encontrar información del tiempo de esta ciudad.
+        </div>
+        <div id="infoCiudad1">
+            <span class="infoCiudadTitulo">Ciudad:</span>
+            <span id="cajaCiudadNombre"></span>
+        </div>
+        <div id="infoCiudad2">
+            <span class="infoCiudadTitulo">Pais:</span>
+            <span id="cajaCiudadPais"></span>
+        </div>
+        <div id="resultados">
+        </div>
+    </main>
+    <footer>
+        <span>© 2010-<!-- -->2022<!-- --> <!-- -->UEMWeather</span>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Legal</a>
+    </footer>
+</body>
+</html>
